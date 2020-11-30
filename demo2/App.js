@@ -4,7 +4,7 @@ import HomeScreen from './src/HomeScreen';
 
 export default function App() {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <HomeScreen />
     </View>
   );
