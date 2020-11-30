@@ -13,4 +13,8 @@ const Spacer = (props) => {
   return <View style={{width: props.size}} />;
 };
 
+const CMEntry = () =>{
+    return ()
+}
+
 export {Spacer};
