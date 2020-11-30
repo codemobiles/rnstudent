@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 
 export default function HomeScreen() {
   // JSX
@@ -54,7 +62,6 @@ export default function HomeScreen() {
             }}
           />
         </View>
-
         {/* Password  */}
         <View
           style={{
@@ -88,6 +95,49 @@ export default function HomeScreen() {
             }}
           />
         </View>
+        {/* Login Button */}
+        <TouchableOpacity>
+          <Text
+            style={{
+              marginLeft: 10,
+              marginRight: 10,
+              height: 50,
+              backgroundColor: '#0F0',
+              textAlignVertical: 'center',
+              color: '#000b',
+              fontSize: 20,
+              borderRadius: 10,
+              marginTop: 32,
+              borderWidth: 1,
+              borderColor: '#0003',
+              width: null,
+              textAlign: 'center',
+            }}>
+            Login
+          </Text>
+        </TouchableOpacity>
+
+        {/* Register Button */}
+        <TouchableOpacity>
+          <Text
+            style={{
+              marginLeft: 10,
+              marginRight: 10,
+              height: 50,
+              backgroundColor: '#0F0',
+              textAlignVertical: 'center',
+              color: '#000b',
+              fontSize: 20,
+              borderRadius: 10,
+              marginTop: 32,
+              borderWidth: 1,
+              borderColor: '#0003',
+              width: null,
+              textAlign: 'center',
+            }}>
+            Register
+          </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
