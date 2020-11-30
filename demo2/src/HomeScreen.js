@@ -39,9 +39,11 @@ export default function HomeScreen() {
             }}
           />
 
+          <View style={{width: 8}} />
+
           <TextInput
             placeholder="Username"
-            style={{borderColor: '#0007', borderWidth: 1}}
+            style={{borderColor: '#0007', borderWidth: 1, flex: 1}}
           />
         </View>
       </View>
