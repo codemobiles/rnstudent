@@ -6,12 +6,12 @@ export default function App() {
     <View
       style={{
         flex: 1,
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'flex-start',
         backgroundColor: 'white',
       }}>
       <View style={{backgroundColor: 'red', flex: 1}} />
-      <View style={{backgroundColor: 'yellow', flex: 1}} />
+      <View style={{backgroundColor: 'yellow', width: 50}} />
       <View style={{backgroundColor: 'blue', flex: 1}} />
     </View>
   );
