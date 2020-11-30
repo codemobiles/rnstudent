@@ -14,6 +14,10 @@ import {CMEntry, Spacer} from './CMWidgets';
 export default function RegisterScreen() {
   debugValue = 1;
   const [count, setCount] = useState(0);
+  const [account, setAccount] = useState({
+    username: '',
+    password: '',
+  });
 
   // JSX
   return (
