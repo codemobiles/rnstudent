@@ -9,6 +9,12 @@ import {
   Button,
 } from 'react-native';
 
+
+const Spacer = ()=>{
+  return <View style={{width: 8}} />
+}
+
+
 export default function RegisterScreen() {
   // JSX
   return (
