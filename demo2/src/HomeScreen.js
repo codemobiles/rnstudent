@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground, Image} from 'react-native';
+import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
 
 export default function HomeScreen() {
   // JSX
@@ -38,6 +38,8 @@ export default function HomeScreen() {
               borderRadius: 15,
             }}
           />
+
+          <TextInput placeholder="Username" />
         </View>
       </View>
     </ImageBackground>
