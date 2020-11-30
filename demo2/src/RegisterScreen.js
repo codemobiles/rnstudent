@@ -44,14 +44,14 @@ export default function RegisterScreen() {
         {/* Username  */}
         <CMEntry
           onChanged={(text) => setAccount({...account, username: text})}
-          iconBackgroundColor="red"
+          iconName="user"
           hint="Username"
           type="email-address"
         />
 
         {/* Password  */}
         <CMEntry
-          iconBackgroundColor="yellow"
+          iconName="lock"
           hint="Password"
           isSecured
           onChanged={(text) => setAccount({...account, password: text})}

@@ -25,14 +25,7 @@ const CMEntry = (props) => {
         flexDirection: 'row',
       }}>
       {/* Icon */}
-      <View
-        style={{
-          height: 30,
-          width: 30,
-          backgroundColor: props.iconBackgroundColor,
-          borderRadius: 15,
-        }}
-      />
+      <Icon name={props.iconName} size={30} />
 
       <Spacer size={8} />
 
