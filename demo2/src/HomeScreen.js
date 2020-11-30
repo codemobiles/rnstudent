@@ -19,7 +19,9 @@ export default function HomeScreen() {
           backgroundColor: '#FFF',
           marginLeft: 30,
           marginRight: 30,
-        }}></View>
+          borderRadius: 5,
+        }}
+      />
     </ImageBackground>
   );
 }
