@@ -5,13 +5,17 @@ export default function HomeScreen() {
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
-      
       {/* Banner */}
       <Image
         style={{width: '100%'}}
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
+
+      {/* Authen section */}
+      <View style={{height:100}}>
+
+      </View>
     </ImageBackground>
   );
 }
