@@ -16,12 +16,30 @@ export default function HomeScreen() {
       <View
         style={{
           height: 100,
-          backgroundColor: '#FFF',
+          backgroundColor: '#FFF3',
           marginLeft: 30,
           marginRight: 30,
           borderRadius: 5,
-        }}
-      />
+        }}>
+        {/* Username  */}
+        <View
+          style={{
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingTop: 10,
+            flexDirection: 'row',
+          }}>
+          {/* Icon */}
+          <View
+            style={{
+              height: 30,
+              width: 30,
+              backgroundColor: 'red',
+              borderRadius: 15,
+            }}
+          />
+        </View>
+      </View>
     </ImageBackground>
   );
 }
