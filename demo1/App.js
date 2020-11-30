@@ -11,8 +11,8 @@ export default function App() {
         backgroundColor: 'white',
       }}>
       <View style={{backgroundColor: 'red', flex: 1}} />
-      <View style={{backgroundColor: 'yellow'}} />
-      <View style={{backgroundColor: 'blue'}} />
+      <View style={{backgroundColor: 'yellow', flex: 1}} />
+      <View style={{backgroundColor: 'blue', flex: 1}} />
     </View>
   );
 }
