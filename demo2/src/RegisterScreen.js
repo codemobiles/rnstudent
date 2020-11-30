@@ -32,10 +32,14 @@ export default function RegisterScreen() {
           paddingBottom: 10,
         }}>
         {/* Username  */}
-        <CMEntry />
+        <CMEntry
+          iconBackgroundColor="red"
+          hint="Username"
+          type="email-address"
+        />
 
         {/* Password  */}
-        <CMEntry />
+        <CMEntry iconBackgroundColor="yellow" hint="Password" isSecured />
 
         {/* Login Button */}
         <TouchableOpacity

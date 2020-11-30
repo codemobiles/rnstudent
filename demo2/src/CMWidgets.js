@@ -13,7 +13,7 @@ const Spacer = (props) => {
   return <View style={{width: props.size}} />;
 };
 
-const CMEntry = () => {
+const CMEntry = (props) => {
   return (
     <View
       style={{
@@ -28,7 +28,7 @@ const CMEntry = () => {
         style={{
           height: 30,
           width: 30,
-          backgroundColor: 'red',
+          backgroundColor: props.iconBackgroundColor,
           borderRadius: 15,
         }}
       />
@@ -36,8 +36,9 @@ const CMEntry = () => {
       <Spacer size={8} />
 
       <TextInput
-        keyboardType="email-address"
-        placeholder="Username"
+        keyboardType={props.type}
+        secureTextEntry={props.isSecured}
+        placeholder={props.hint}
         style={{
           borderColor: '#0003',
           borderWidth: 1,
