@@ -10,9 +10,9 @@ export default function App() {
         justifyContent: 'flex-start',
         backgroundColor: 'white',
       }}>
-      <Button title="Hey 1" color="#f00" />
-      <Button title="Hey 2" color="#ff0" />
-      <Button title="Hey 3" color="#00f" />
+      <View style={{backgroundColor: 'red', flex: 1}} />
+      <View style={{backgroundColor: 'yellow'}} />
+      <View style={{backgroundColor: 'blue'}} />
     </View>
   );
 }
