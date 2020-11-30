@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -13,6 +13,7 @@ import {CMEntry, Spacer} from './CMWidgets';
 
 export default function RegisterScreen() {
   debugValue = 1;
+  const [count, setCount] = useState(0);
 
   // JSX
   return (
@@ -25,7 +26,7 @@ export default function RegisterScreen() {
       />
 
       {/* Debug */}
-      <Text> {debugValue}</Text>
+      <Text> {count}</Text>
 
       {/* Authen section */}
       <View
@@ -74,8 +75,8 @@ export default function RegisterScreen() {
         {/* Register Button */}
         <TouchableOpacity
           onPress={() => {
-            debugValue++;
-            console.log(debugValue);
+            setCount(count + 1);
+            console.log(count);
           }}>
           <Text
             style={{
