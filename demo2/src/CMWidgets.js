@@ -36,6 +36,7 @@ const CMEntry = (props) => {
       <Spacer size={8} />
 
       <TextInput
+        onChangeText={props.onChanged}
         keyboardType={props.type}
         secureTextEntry={props.isSecured}
         placeholder={props.hint}

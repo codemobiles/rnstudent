@@ -30,7 +30,7 @@ export default function RegisterScreen() {
       />
 
       {/* Debug */}
-      <Text> {count}</Text>
+      <Text>#Debug : {JSON.stringify(account)}</Text>
 
       {/* Authen section */}
       <View
@@ -43,13 +43,19 @@ export default function RegisterScreen() {
         }}>
         {/* Username  */}
         <CMEntry
+          onChanged={(text) => setAccount({...account, username: text})}
           iconBackgroundColor="red"
           hint="Username"
           type="email-address"
         />
 
         {/* Password  */}
-        <CMEntry iconBackgroundColor="yellow" hint="Password" isSecured />
+        <CMEntry
+          iconBackgroundColor="yellow"
+          hint="Password"
+          isSecured
+          onChanged={(text) => setAccount({...account, password: text})}
+        />
 
         {/* Login Button */}
         <TouchableOpacity
