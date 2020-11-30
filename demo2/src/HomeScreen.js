@@ -96,7 +96,10 @@ export default function HomeScreen() {
           />
         </View>
         {/* Login Button */}
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            alert('Login');
+          }}>
           <Text
             style={{
               marginLeft: 10,
@@ -118,7 +121,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
 
         {/* Register Button */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('Register')}>
           <Text
             style={{
               marginLeft: 10,
