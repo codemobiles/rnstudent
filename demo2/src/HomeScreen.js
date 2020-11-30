@@ -13,7 +13,13 @@ export default function HomeScreen() {
       />
 
       {/* Authen section */}
-      <View style={{height: 100, backgroundColor: '#FFF'}}></View>
+      <View
+        style={{
+          height: 100,
+          backgroundColor: '#FFF',
+          marginLeft: 30,
+          marginRight: 30,
+        }}></View>
     </ImageBackground>
   );
 }
