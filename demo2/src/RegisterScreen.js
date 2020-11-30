@@ -9,11 +9,7 @@ import {
   Button,
 } from 'react-native';
 
-
-const Spacer = ()=>{
-  return <View style={{width: 8}} />
-}
-
+import {Spacer} from './CMWidgets';
 
 export default function RegisterScreen() {
   // JSX
@@ -54,7 +50,7 @@ export default function RegisterScreen() {
             }}
           />
 
-          <View style={{width: 8}} />
+          <Spacer size={8} />
 
           <TextInput
             keyboardType="email-address"
@@ -87,7 +83,7 @@ export default function RegisterScreen() {
             }}
           />
 
-          <View style={{width: 8}} />
+          <Spacer size={8} />
 
           <TextInput
             secureTextEntry

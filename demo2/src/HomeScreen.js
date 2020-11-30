@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
+import {Spacer} from './CMWidgets';
 
 export default function HomeScreen() {
   // JSX
@@ -48,7 +49,7 @@ export default function HomeScreen() {
             }}
           />
 
-          <View style={{width: 8}} />
+          <Spacer size={8} />
 
           <TextInput
             keyboardType="email-address"
@@ -81,7 +82,7 @@ export default function HomeScreen() {
             }}
           />
 
-          <View style={{width: 8}} />
+          <Spacer size={8} />
 
           <TextInput
             secureTextEntry
