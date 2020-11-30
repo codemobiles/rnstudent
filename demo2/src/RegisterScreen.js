@@ -64,6 +64,8 @@ export default function RegisterScreen() {
             }}
           />
         </View>
+       
+       
         {/* Password  */}
         <View
           style={{
