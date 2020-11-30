@@ -1,16 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button} from 'react-native';
 
 export default function App() {
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         backgroundColor: 'red',
       }}>
-      <Text>Hey 1234</Text>
+      <Button title="Hey 1" />
+      <Button title="Hey 2" />
+      <Button title="Hey 3" />
     </View>
   );
 }
