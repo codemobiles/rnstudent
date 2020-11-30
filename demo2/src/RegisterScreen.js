@@ -12,6 +12,8 @@ import {
 import {CMEntry, Spacer} from './CMWidgets';
 
 export default function RegisterScreen() {
+  debugValue = '1';
+
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
@@ -21,6 +23,9 @@ export default function RegisterScreen() {
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
+
+      {/* Debug */}
+      <Text> {debugValue}</Text>
 
       {/* Authen section */}
       <View
