@@ -15,11 +15,11 @@ export default function HomeScreen() {
       {/* Authen section */}
       <View
         style={{
-          height: 100,
           backgroundColor: '#FFF3',
           marginLeft: 30,
           marginRight: 30,
           borderRadius: 5,
+          paddingBottom: 10,
         }}>
         {/* Username  */}
         <View
