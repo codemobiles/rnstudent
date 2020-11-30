@@ -12,7 +12,7 @@ import {
 import {CMEntry, Spacer} from './CMWidgets';
 
 export default function RegisterScreen() {
-  debugValue = '1';
+  debugValue = 1;
 
   // JSX
   return (
@@ -72,7 +72,11 @@ export default function RegisterScreen() {
         </TouchableOpacity>
 
         {/* Register Button */}
-        <TouchableOpacity onPress={() => alert('Register')}>
+        <TouchableOpacity
+          onPress={() => {
+            debugValue++;
+            console.log(debugValue);
+          }}>
           <Text
             style={{
               marginLeft: 10,
