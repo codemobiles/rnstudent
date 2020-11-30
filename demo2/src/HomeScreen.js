@@ -43,6 +43,7 @@ export default function HomeScreen() {
           <View style={{width: 8}} />
 
           <TextInput
+            keyboardType="email-address"
             placeholder="Username"
             style={{
               borderColor: '#0003',
@@ -76,6 +77,7 @@ export default function HomeScreen() {
           <View style={{width: 8}} />
 
           <TextInput
+            secureTextEntry
             placeholder="Password"
             style={{
               borderColor: '#0003',
