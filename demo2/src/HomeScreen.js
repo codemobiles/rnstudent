@@ -5,6 +5,8 @@ export default function HomeScreen() {
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
+      
+      {/* Banner */}
       <Image
         style={{width: '100%'}}
         resizeMode="contain"
