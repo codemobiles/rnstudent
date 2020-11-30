@@ -8,12 +8,11 @@ export default function App() {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: 'red',
+        backgroundColor: 'white',
       }}>
-      <Button title="Hey 1" />
-      <Button title="Hey 2" />
-      <Button title="Hey 3" />
+      <Button title="Hey 1" color="#f00" />
+      <Button title="Hey 2" color="#ff0" />
+      <Button title="Hey 3" color="#00f" />
     </View>
   );
 }
