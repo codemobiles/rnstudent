@@ -7,7 +7,9 @@ export default function JSONFeedScreen() {
   return (
     <View style={{flex: 1}}>
       {dataArray.map((item, index) => (
-        <Text key={String(index)}>{item} </Text>
+        <Text key={String(index)}>
+          {index}. {item}{' '}
+        </Text>
       ))}
     </View>
   );
