@@ -3,7 +3,8 @@ import {View, Text} from 'react-native';
 import axios from 'axios';
 
 export default function JSONFeedScreen() {
-  const dataArray = ['Angular', 'RaspberryPi', 'React'];
+  
+  const [dataArray, setDataArray] = useState([])
 
   React.useEffect(() => {
     loadData();
@@ -15,6 +16,7 @@ export default function JSONFeedScreen() {
     const data = `username=${regUsername}&password=${regPassword}&type=foods`;
     const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
     const result = await axios.post(url, data);
+
   };
 
   return (
