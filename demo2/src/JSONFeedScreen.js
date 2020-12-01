@@ -12,6 +12,7 @@ import axios from 'axios';
 
 export default function JSONFeedScreen() {
   const [dataArray, setDataArray] = React.useState([]);
+  const [isRefreshing, setIsRefreshing] = React.useState(false);
 
   React.useEffect(() => {
     loadData();
@@ -58,6 +59,8 @@ export default function JSONFeedScreen() {
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
+        onRefresh={()=>{}}
+        refreshing={true}
         data={dataArray}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
