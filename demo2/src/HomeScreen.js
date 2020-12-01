@@ -64,6 +64,7 @@ export default function HomeScreen(props) {
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
+      <Text>{JSON.stringify(account)}</Text>
 
       {/* Authen section */}
       <View
