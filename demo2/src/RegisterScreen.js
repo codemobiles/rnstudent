@@ -98,11 +98,10 @@ export default function RegisterScreen(props) {
           </Text>
         </TouchableOpacity>
 
-        {/* Register Button */}
+        {/* Cancel Button */}
         <TouchableOpacity
           onPress={() => {
-            setCount(count + 1);
-            console.log(count);
+            props.navigation.goBack();
           }}>
           <Text
             style={{

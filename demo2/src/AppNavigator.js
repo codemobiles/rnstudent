@@ -12,12 +12,23 @@ import YoutubeScreen from './YoutubeScreen';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const SuccessTab = () => {
+  return (
+    <Tab.Navigator initialRouteName="JSON">
+      <Tab.Screen name="JSON" component={JSONFeedScreen} />
+      <Tab.Screen name="Camera" component={CameraScreen} />
+    </Tab.Navigator>
+  );
+};
 
 const RootStack = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen name="Success" component={SuccessTab} />
     </Stack.Navigator>
   );
 };
