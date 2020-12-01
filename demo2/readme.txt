@@ -20,7 +20,7 @@ Variables (3 types)
 
     yarn add @react-navigation/native @react-navigation/stack @react-navigation/bottom-tabs
     yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-    yarn add @react-native-community/async-storage axios react-native-iphone-x-helper    
+    yarn add @react-native-community/async-storage axios react-native-iphone-x-helper react-native-permissions   
     
     npx react-native link react-native-gesture-handler
     npx react-native link react-native-reanimated
