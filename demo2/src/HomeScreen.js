@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -45,11 +45,13 @@ export default function HomeScreen(props) {
     });
   };
 
+  const [account, setAccount] = useState({username: '', password: ''});
+
   onLogin = async () => {
     //props.navigation.navigate('Success');
-    const regAcc = await AsyncStorage.getItem('ACCOUNT');
-    if (regAcc) {
-      alert(regAcc);
+    const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
+    if (regAccJSON) {
+      const regAcc = JSON.parse(regAccJSON);
     }
   };
 
