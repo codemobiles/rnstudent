@@ -57,6 +57,7 @@ export default function HomeScreen(props) {
         regAcc.username == account.username &&
         regAcc.password == account.password
       ) {
+        await AsyncStorage.setItem("TOKEN", account.username)
         props.navigation.navigate('Success');
       } else {
         alert('Login failed');
