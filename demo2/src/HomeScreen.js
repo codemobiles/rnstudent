@@ -96,6 +96,7 @@ export default function HomeScreen(props) {
           <Spacer size={8} />
 
           <TextInput
+            onChangeText={(text) => setAccount({...account, username: text})}
             keyboardType="email-address"
             placeholder="Username"
             style={{
@@ -129,6 +130,7 @@ export default function HomeScreen(props) {
           <Spacer size={8} />
 
           <TextInput
+            onChangeText={(text) => setAccount({...account, password: text})}
             secureTextEntry
             placeholder="Password"
             style={{
