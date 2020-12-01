@@ -10,7 +10,10 @@ export default function JSONFeedScreen() {
   }, []);
 
   loadData = async () => {
-    
+    const regUsername = "admin"
+    const regPassword = "password"
+    let data = `username=${regUsername}&password=${regPassword}&type=foods`;
+
   };
 
   return (
