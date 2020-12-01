@@ -28,9 +28,8 @@ export default function JSONFeedScreen() {
       const data = `username=${regUsername}&password=${regPassword}&type=foods`;
       const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
       const result = await axios.post(url, data);
-      setDataArray(result.data.youtubes);
 
-      setIsRefreshing(false);
+      setDataArray(result.data.youtubes);
     } catch (e) {
       alert('Fetching failed');
     }
