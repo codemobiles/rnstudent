@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {Spacer} from './CMWidgets';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
@@ -122,7 +122,7 @@ export default function HomeScreen() {
         </TouchableOpacity>
 
         {/* Register Button */}
-        <TouchableOpacity onPress={() => alert('Register')}>
+        <TouchableOpacity onPress={() => props.navigation.navigate("Register")}>
           <Text
             style={{
               marginLeft: 10,
