@@ -12,7 +12,6 @@ import {
 import {CMEntry, Spacer} from './CMWidgets';
 import AsyncStorage from '@react-native-community/async-storage';
 
-
 export default function RegisterScreen(props) {
   debugValue = 1;
   const [count, setCount] = useState(0);
@@ -77,8 +76,9 @@ export default function RegisterScreen(props) {
 
         {/* Login Button */}
         <TouchableOpacity
-          onPress={() => {
-            alert('Login');
+          onPress={async () => {
+            await AsyncStorage.setItem('ACCOUNT', JSON.stringify(account))
+            props.navigation.goBack();
           }}>
           <Text
             style={{
