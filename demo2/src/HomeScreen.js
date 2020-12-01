@@ -15,8 +15,8 @@ export default function HomeScreen() {
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
       {/* Banner */}
-      <Image               
-        style={{width: '100%', fl}}
+      <Image
+        style={{width: '100%'}}
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
@@ -32,7 +32,6 @@ export default function HomeScreen() {
         }}>
         {/* Username  */}
         <View
-          
           style={{
             paddingLeft: 10,
             paddingRight: 10,
