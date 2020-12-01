@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import axios from 'axios';
 
 export default function JSONFeedScreen() {
@@ -10,21 +10,25 @@ export default function JSONFeedScreen() {
   }, []);
 
   const loadData = async () => {
-    const regUsername = 'admin';
-    const regPassword = 'password';
-    const data = `username=${regUsername}&password=${regPassword}&type=foods`;
-    const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
-    const result = await axios.post(url, data);
-    setDataArray(result.data.youtubes);
+    try {
+      const regUsername = 'admin';
+      const regPassword = 'password';
+      const data = `username=${regUsername}&password=${regPassword}&type=foods`;
+      const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
+      const result = await axios.post(url, data);
+      setDataArray(result.data.youtubes);
+    } catch (e) {
+      alert('Fetching failed');
+    }
   };
 
   return (
     <View style={{flex: 1}}>
-      {dataArray.map((item, index) => (
-        <Text key={String(index)}>
-          {index}. {item.title}
-        </Text>
-      ))}
+      <FlatList
+        data={dataArray}
+        renderItem={({item, index}) => <Text>{item.title}</Text>}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 }
