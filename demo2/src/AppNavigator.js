@@ -14,6 +14,42 @@ import AsyncStorage from '@react-native-community/async-storage';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const tab1 = {
+  tabBarLabel: 'JSON',
+  tabBarIcon: ({focused}) => (
+    <Image
+      style={{
+        height: 28,
+        width: 28,
+      }}
+      resizeMode="contain"
+      source={
+        focused
+          ? require('./assets/img/ic_profile_select.png')
+          : require('./assets/img/ic_profile.png')
+      }
+    />
+  ),
+};
+
+const tab2 = {
+  tabBarLabel: 'Camera',
+  tabBarIcon: ({focused}) => (
+    <Image
+      style={{
+        height: 28,
+        width: 28,
+      }}
+      resizeMode="contain"
+      source={
+        focused
+          ? require('./assets/img/ic_card_select.png')
+          : require('./assets/img/ic_card.png')
+      }
+    />
+  ),
+};
+
 const SuccessTab = () => {
   return (
     <Tab.Navigator initialRouteName="JSON">
