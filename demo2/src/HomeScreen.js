@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {Spacer} from './CMWidgets';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function HomeScreen(props) {
   useEffect(() => {
@@ -42,6 +43,14 @@ export default function HomeScreen(props) {
         </TouchableOpacity>
       ),
     });
+  };
+
+  onLogin = async () => {
+    //props.navigation.navigate('Success');
+    const regAcc = await AsyncStorage.getItem('ACCOUNT');
+    if (regAcc) {
+      alert(regAcc);
+    }
   };
 
   // JSX
@@ -130,10 +139,7 @@ export default function HomeScreen(props) {
           />
         </View>
         {/* Login Button */}
-        <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate('Success');
-          }}>
+        <TouchableOpacity onPress={onLogin}>
           <Text
             style={{
               marginLeft: 10,
