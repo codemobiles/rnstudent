@@ -53,8 +53,8 @@ const tab2 = {
 const SuccessTab = () => {
   return (
     <Tab.Navigator initialRouteName="JSON">
-      <Tab.Screen name="JSON" component={JSONFeedScreen} />
-      <Tab.Screen name="Camera" component={CameraScreen} />
+      <Tab.Screen name="JSON" component={JSONFeedScreen} options={tab1} />
+      <Tab.Screen name="Camera" component={CameraScreen} options={tab2} />
     </Tab.Navigator>
   );
 };

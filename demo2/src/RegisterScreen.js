@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 
 import {CMEntry, Spacer} from './CMWidgets';
+import AsyncStorage from '@react-native-community/async-storage';
+
 
 export default function RegisterScreen(props) {
   debugValue = 1;
