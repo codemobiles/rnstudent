@@ -8,19 +8,24 @@ export default function App() {
   const [forceLogin, setForceLogin] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
-  useEffect(async () => {
+  useEffect(() => {
+    checkLoginState()
+  }, []);
+
+  checkLoginState = async ()=>{
     const token = await AsyncStorage.getItem('TOKEN');
     if (token == null) {
       setForceLogin(true);
+      setIsReady(true)
     }
-  }, []);
+  }
 
   return (
     <NavigationContainer>
       <View style={{flex: 1}}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView />
-        <AppNavigator forceLogin />
+        {isReady && <AppNavigator forceLogin />} 
       </View>
     </NavigationContainer>
   );
