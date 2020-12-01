@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,13 +11,29 @@ import {
 
 import {CMEntry, Spacer} from './CMWidgets';
 
-export default function RegisterScreen() {
+export default function RegisterScreen(props) {
   debugValue = 1;
   const [count, setCount] = useState(0);
   const [account, setAccount] = useState({
     username: '',
     password: '',
   });
+
+  useEffect(() => {
+    setNavigationOption();
+  }, []);
+
+  setNavigationOption = () => {
+    props.navigation.setOptions({
+      title: 'Register',
+      headerStyle: {
+        backgroundColor: '#999CED',
+      },
+      headerTintColor: '#FFFFFF',
+      headerTitleStyle: {color: '#fff'},
+      headerBackTitle: ' ',
+    });
+  };
 
   // JSX
   return (
