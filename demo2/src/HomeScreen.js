@@ -52,6 +52,15 @@ export default function HomeScreen(props) {
     const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
     if (regAccJSON) {
       const regAcc = JSON.parse(regAccJSON);
+
+      if (
+        regAcc.username == account.username &&
+        regAcc.password == account.password
+      ) {
+        props.navigation.navigate('Success');
+      } else {
+        alert('Login failed');
+      }
     }
   };
 
