@@ -61,8 +61,7 @@ const SuccessTab = () => {
 
 const RootStack = (props) => {
   return (
-    <Stack.Navigator
-      initialRouteName={props.forceShowLogin ? 'Home' : 'Success'}>
+    <Stack.Navigator initialRouteName={props.forceLogin ? 'Home' : 'Success'}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Success" component={SuccessTab} />
