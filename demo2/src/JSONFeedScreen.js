@@ -42,3 +42,7 @@ export default function JSONFeedScreen() {
     </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {flex: 1},
+});
