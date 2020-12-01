@@ -1,13 +1,16 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import HomeScreen from './src/HomeScreen';
-import RegisterScreen from './src/RegisterScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import AppNavigator from './src/AppNavigator';
 
 export default function App() {
   return (
-    <View style={{flex: 1}}>
-      {/* <HomeScreen /> */}
-      <RegisterScreen />
-    </View>
+    <NavigationContainer>
+      <View style={{flex: 1}}>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView />
+        <AppNavigator />
+      </View>
+    </NavigationContainer>
   );
 }
