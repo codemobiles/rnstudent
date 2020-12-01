@@ -10,3 +10,16 @@ import JSONFeedScreen from './JSONFeedScreen';
 import CameraScreen from './CameraScreen';
 import YoutubeScreen from './YoutubeScreen';
 import AsyncStorage from '@react-native-community/async-storage';
+
+const Stack = createStackNavigator();
+
+const RootStack = () => {
+  return (
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+};
+
+export default RootStack;
