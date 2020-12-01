@@ -20,12 +20,17 @@ export default function JSONFeedScreen() {
 
   const loadData = async () => {
     try {
+      setIsRefreshing(true);
+      setDataArray([]);
+
       const regUsername = 'admin';
       const regPassword = 'password';
       const data = `username=${regUsername}&password=${regPassword}&type=foods`;
       const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
       const result = await axios.post(url, data);
       setDataArray(result.data.youtubes);
+
+      setIsRefreshing(false);
     } catch (e) {
       alert('Fetching failed');
     }
@@ -59,8 +64,8 @@ export default function JSONFeedScreen() {
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
-        onRefresh={()=>{}}
-        refreshing={true}
+        onRefresh={loadData}
+        refreshing={isRefreshing}
         data={dataArray}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
