@@ -10,10 +10,11 @@ export default function JSONFeedScreen() {
   }, []);
 
   loadData = async () => {
-    const regUsername = "admin"
-    const regPassword = "password"
-    let data = `username=${regUsername}&password=${regPassword}&type=foods`;
-
+    const regUsername = 'admin';
+    const regPassword = 'password';
+    const data = `username=${regUsername}&password=${regPassword}&type=foods`;
+    const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
+    const result = await axios.post(url, data);
   };
 
   return (
