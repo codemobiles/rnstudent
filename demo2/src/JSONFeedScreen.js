@@ -30,13 +30,26 @@ export default function JSONFeedScreen() {
     }
   };
 
+  const renderRow = ({item, index}) => {
+    return (
+      <TouchableOpacity style={styles.listCard}>
+        
+        {/* Header section */}
+        <View></View>
+
+        {/* Big Image section */}
+        <Image/>
+      </TouchableOpacity>
+    )
+  };
+
   return (
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
       <FlatList
         data={dataArray}
-        renderItem={({item, index}) => <Text>{item.title}</Text>}
+        renderItem={renderRow}
         keyExtractor={(item) => item.id}
       />
     </ImageBackground>
