@@ -4,20 +4,23 @@ import {NavigationContainer} from '@react-navigation/native';
 import AppNavigator from './src/AppNavigator';
 import AsyncStorage from '@react-native-community/async-storage';
 
-
 export default function App() {
-
-  const [showLogin, setShowLogin] = useState(false);
+  const [forceLogin, setForceLogin] = useState(false);
   const [isReady, setIsReady] = useState(false);
 
-  
+  useEffect(async () => {
+    const token = await AsyncStorage.getItem('TOKEN');
+    if (token == null) {
+      setForceLogin(true);
+    }
+  }, []);
 
   return (
     <NavigationContainer>
       <View style={{flex: 1}}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView />
-        <AppNavigator forceLogin={false} />
+        <AppNavigator forceLogin />
       </View>
     </NavigationContainer>
   );
