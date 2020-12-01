@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,6 +11,39 @@ import {
 import {Spacer} from './CMWidgets';
 
 export default function HomeScreen(props) {
+  useEffect(() => {
+    
+  }, []);
+
+
+  setNavigationOption = () => {
+    props.navigation.setOptions({
+      title: 'Home',
+      headerStyle: {
+        backgroundColor: '#999CED',
+      },
+      headerTintColor: '#FFFFFF',
+      headerTitleStyle: {color: '#fff'},
+      headerBackTitle: ' ',
+      headerRight: () => (
+        <TouchableOpacity
+          activeOpacity={0.1}
+          onPress={() => alert('www.codemobiles.com')}
+          style={{padding: 10}}>
+          <Icon
+            name="address-card"
+            size={20}
+            color="#fff"
+            style={{
+              height: 24,
+              width: 24,
+            }}
+          />
+        </TouchableOpacity>
+      ),
+    });
+  };
+  
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
@@ -122,7 +155,7 @@ export default function HomeScreen(props) {
         </TouchableOpacity>
 
         {/* Register Button */}
-        <TouchableOpacity onPress={() => props.navigation.navigate("Register")}>
+        <TouchableOpacity onPress={() => props.navigation.navigate('Register')}>
           <Text
             style={{
               marginLeft: 10,
