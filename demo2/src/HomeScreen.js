@@ -9,12 +9,12 @@ import {
   Button,
 } from 'react-native';
 import {Spacer} from './CMWidgets';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function HomeScreen(props) {
   useEffect(() => {
-    
+    setNavigationOption();
   }, []);
-
 
   setNavigationOption = () => {
     props.navigation.setOptions({
@@ -43,7 +43,7 @@ export default function HomeScreen(props) {
       ),
     });
   };
-  
+
   // JSX
   return (
     <ImageBackground source={require('./assets/img/bg.png')} style={{flex: 1}}>
