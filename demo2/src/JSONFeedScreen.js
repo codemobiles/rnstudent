@@ -30,6 +30,7 @@ export default function JSONFeedScreen() {
       const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
       const result = await axios.post(url, data);
 
+      setIsRefreshing(false);
       setDataArray(result.data.youtubes);
     } catch (e) {
       alert('Fetching failed');
@@ -38,10 +39,11 @@ export default function JSONFeedScreen() {
 
   const renderRow = ({item, index}) => {
     return (
-      <TouchableOpacity style={styles.listCard} onPress={() => {
-
-           // props.navigation.navigate("Youtube", {item})
-           YouTubeStandaloneAndroid.playVideo({
+      <TouchableOpacity
+        style={styles.listCard}
+        onPress={() => {
+          // props.navigation.navigate("Youtube", {item})
+          YouTubeStandaloneAndroid.playVideo({
             apiKey: 'YOUR_API_KEY', // Your YouTube Developer API Key
             videoId: item.id, // YouTube video ID
             autoplay: true, // Autoplay the video
@@ -49,8 +51,7 @@ export default function JSONFeedScreen() {
           })
             .then(() => console.log('Standalone Player Exited'))
             .catch((errorMessage) => console.error(errorMessage));
-
-      }}>
+        }}>
         {/* Header section */}
         <View style={styles.listCardView}>
           <Image source={{uri: item.avatar_image}} style={styles.listAvatar} />
