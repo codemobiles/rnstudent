@@ -48,7 +48,10 @@ export default function JSONFeedScreen() {
         </View>
 
         {/* Big Image section */}
-        <Image />
+        <Image
+          source={require('./assets/img/loadingimg.png')}
+          style={styles.listYoutubeImage}
+        />
       </TouchableOpacity>
     );
   };
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
   listSubTitle: {
     fontWeight: '100',
   },
-  listYoutbeImage: {
+  listYoutubeImage: {
     width: '100%',
     height: 190,
   },
