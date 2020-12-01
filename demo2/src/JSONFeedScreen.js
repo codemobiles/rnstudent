@@ -1,5 +1,13 @@
-import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import axios from 'axios';
 
 export default function JSONFeedScreen() {
@@ -23,12 +31,14 @@ export default function JSONFeedScreen() {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <ImageBackground
+      style={styles.container}
+      source={require('./assets/img/bg.png')}>
       <FlatList
         data={dataArray}
         renderItem={({item, index}) => <Text>{item.title}</Text>}
         keyExtractor={(item) => item.id}
       />
-    </View>
+    </ImageBackground>
   );
 }
