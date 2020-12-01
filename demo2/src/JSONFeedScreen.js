@@ -35,21 +35,18 @@ export default function JSONFeedScreen() {
       <TouchableOpacity style={styles.listCard}>
         {/* Header section */}
         <View style={styles.listCardView}>
-          <Image
-            source={require('./assets/img/avatar.png')}
-            style={styles.listAvatar}
-          />
+          <Image source={{uri: item.avatar_image}} style={styles.listAvatar} />
 
           {/* Title and Subtitle */}
           <View style={styles.listTitleSubtitleContainer}>
-            <Text style={styles.listTitle}>Title</Text>
-            <Text style={styles.listSubTitle}>SubTitle</Text>
+            <Text style={styles.listTitle}>{item.title}</Text>
+            <Text style={styles.listSubTitle}>{item.subtitle}</Text>
           </View>
         </View>
 
         {/* Big Image section */}
         <Image
-          source={require('./assets/img/loadingimg.png')}
+          source={{uri: item.youtube_image}}
           style={styles.listYoutubeImage}
         />
       </TouchableOpacity>
