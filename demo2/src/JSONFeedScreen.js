@@ -33,14 +33,24 @@ export default function JSONFeedScreen() {
   const renderRow = ({item, index}) => {
     return (
       <TouchableOpacity style={styles.listCard}>
-        
         {/* Header section */}
-        <View></View>
+        <View style={styles.listCardView}>
+          <Image
+            source={require('./assets/img/avatar.png')}
+            style={styles.listAvatar}
+          />
+
+          {/* Title and Subtitle */}
+          <View style={styles.listTitleSubtitleContainer}>
+            <Text style={styles.listTitle}>Title</Text>
+            <Text style={styles.listSubTitle}>SubTitle</Text>
+          </View>
+        </View>
 
         {/* Big Image section */}
-        <Image/>
+        <Image />
       </TouchableOpacity>
-    )
+    );
   };
 
   return (
