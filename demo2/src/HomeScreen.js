@@ -132,7 +132,7 @@ export default function HomeScreen(props) {
         {/* Login Button */}
         <TouchableOpacity
           onPress={() => {
-            alert('Login');
+            props.navigation.navigate('Success');
           }}>
           <Text
             style={{
