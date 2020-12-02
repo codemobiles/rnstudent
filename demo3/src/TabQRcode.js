@@ -31,8 +31,7 @@ export default function TabQRcode() {
         }}
         source={require('./img/header_react_native.png')}
       />
-
-<TextInput
+      <TextInput
         placeholder="QRCode Value"
         style={{
           fontSize: 18,
@@ -48,10 +47,20 @@ export default function TabQRcode() {
         }}
         onChangeText={(text) => setQrValue(text)}
       />
-      
-    <QRCode
-      value={qrValue != '' ? qrValue : "www.codemobiles.com"}
-    />
+
+      <ScrollView
+        contentContainerStyle={{
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}>
+        {[1, 2, 3].map((value) => (
+          <MyQRCode
+            value={value.toString()}
+            logo={require(PATH_TO_LOGO)}
+            logoBorderRadius={15}
+          />
+        ))}
+      </ScrollView>
     </ImageBackground>
   );
 }
