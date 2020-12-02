@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.end('I am login');
+  res.json({result: 'ok', detail: req.query});
 });
 
 app.listen(3000, () => {
