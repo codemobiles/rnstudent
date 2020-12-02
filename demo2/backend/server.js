@@ -18,6 +18,27 @@ app.post("/upload", (req, res)=>{
     })
 })
 
+
+
+app.post('/uploads', (req, res) => {
+    let form = new formidable.IncomingForm();
+    form.parse(req, (error, fields, files) => {
+      // res.json({error, fields, files});
+      var newname = Date.now();
+      var oldpath = files.userfile.path;
+      var newpath =
+        __dirname +
+        '/upload/' +
+        newname.toString() +
+        '.' +
+        files.userfile.name.split('.').pop();
+  
+      fs.move(oldpath, newpath, function (err) {
+        res.json({result: 'Upload Successfully', account: fields});
+      });
+    });
+  });
+
 app.listen(3000, () => {
   console.log('Server is running.');
 });
