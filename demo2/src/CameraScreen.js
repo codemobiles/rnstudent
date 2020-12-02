@@ -103,20 +103,19 @@ const CameraScreen = () => {
       </View>
 
       {image && (
-        <Image
-          source={image}
-          style={{flex: 1, width: '100%', marginBottom: 20}}
-          resizeMode="contain"
-        />
-      )}
+        <>
+          <Image
+            source={image}
+            style={{flex: 1, width: '100%', marginBottom: 20}}
+            resizeMode="contain"
+          />
 
-      {/* Show Upload button */}
-      {image && (
-        <TouchableOpacity
-          onPress={() => uploadWithAxios(image)}
-          style={styles.upload_button}>
-          <Text style={styles.text}>UPLOAD</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => uploadWithAxios(image)}
+            style={styles.upload_button}>
+            <Text style={styles.text}>UPLOAD</Text>
+          </TouchableOpacity>
+        </>
       )}
     </ImageBackground>
   );
