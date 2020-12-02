@@ -41,4 +41,5 @@ Variables (3 types)
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 
+extended display android display manager & react-native
 https://github.com/microsoft/react-native-dualscreen
