@@ -26,7 +26,7 @@ export default function App() {
       <View style={{flex: 1}}>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView />
-        {isReady && <AppNavigator forceLogin={forceLogin} />}
+        {isReady && <AppNavigator forceLogin={forceLogin} setIsReady={setIsReady} />}
       </View>
     </NavigationContainer>
   );
