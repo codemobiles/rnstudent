@@ -6,7 +6,8 @@ import {
   ImageBackground,
   Image,
   FlatList,
-  TouchableOpacity,
+  TouchableOpacity,  
+  Dimensions
 } from 'react-native';
 import axios from 'axios';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
@@ -68,6 +69,25 @@ export default function JSONFeedScreen() {
           source={{uri: item.youtube_image}}
           style={styles.listYoutubeImage}
         />
+
+        <Text
+          style={{
+            backgroundColor: 'black',
+            color: 'yellow',
+            width: 150,
+            position: 'absolute',
+            top: 100,
+            left: 100,
+            textAlign: 'center',
+            textAlignVertical: 'center',
+            fontSize: 30,
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingTop: 10,
+            paddingBottom: 10,
+          }}>
+          หมดแล้ว
+        </Text>
       </TouchableOpacity>
     );
   };
