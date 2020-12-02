@@ -5,7 +5,14 @@ import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 export default function ScannerScreen(props) {
   const scannerRef = useRef(null)
+  const [isReady, setIsReady] = useState(false)
 
+  useEffect(()=>{
+
+    setTimeout(()=>{
+      setIsReady(true)
+    }, 2000)
+  },[])
  
 
   const showScanner = () => {
@@ -48,7 +55,7 @@ export default function ScannerScreen(props) {
 
   return (
     <View style={{flex: 1, backgroundColor: 'black'}}>
-      {showScanner()}
+      {isReady ? showScanner() : showLoading()}
     </View>
   );
 }
