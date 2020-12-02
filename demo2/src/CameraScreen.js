@@ -17,7 +17,6 @@ import axios from 'axios';
 const CameraScreen = () => {
   const [image, setImage] = useState(null);
 
- 
   const openCamera = async (cropIt) => {
     let image = await ImagePicker.openCamera({
       cropping: cropIt,
@@ -64,7 +63,6 @@ const CameraScreen = () => {
     Alert.alert(JSON.stringify(result.data));
   };
 
-  
   return (
     <ImageBackground
       source={require('./assets/img/bg.png')}
@@ -98,13 +96,19 @@ const CameraScreen = () => {
 
         {/* GALLERY*/}
         <TouchableOpacity
-          onPress={() => openPhotoGallery(true)}          
+          onPress={() => openPhotoGallery(true)}
           style={styles.button}>
           <Text style={styles.text}>GALLERY</Text>
         </TouchableOpacity>
       </View>
 
-     
+      {image && (
+        <Image
+          source={image}
+          style={{flex: 1, width: '100%', marginBottom: 20}}
+          resizeMode="contain"
+        />
+      )}
 
       {/* Show Upload button */}
       {image && (
