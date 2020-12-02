@@ -26,5 +26,5 @@ Content-Disposition: form-data; name="price";
 Content-Disposition: form-data; name="image"; filename="test.jpg"
 Content-Type: image/png
 
-< ./test.jpg
+< ./cmdev_icon.png
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
