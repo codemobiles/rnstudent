@@ -46,3 +46,27 @@ const tab2_Option = {
 };
 
 
+const TabScreen = ()=>{
+  return (
+    <Tab.Navigator initialRouteName="Tab1">
+      <>
+      <Tab.Screen name="Tab1" component={TabQRcode} options={tab1_Option}/>
+      <Tab.Screen name="Tab2" component={TabScanner} options={tab2_Option}/>
+      </>
+    </Tab.Navigator>
+  )
+}
+
+
+const RootStack = ()=> {
+  return (
+    <Stack.Navigator initialRouteName="TabScreen">
+      <>
+        <Stack.Screen name="TabScreen" component={TabScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="Scanner" component={ScannerScreen}/>
+      </>
+    </Stack.Navigator>
+  )
+}
+
+export default RootStack
