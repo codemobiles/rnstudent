@@ -43,3 +43,6 @@ Variables (3 types)
 
 extended display android display manager & react-native
 https://github.com/microsoft/react-native-dualscreen
+
+
+yarn add express formidable fs-extra body-parser
