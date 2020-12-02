@@ -14,6 +14,37 @@ import AsyncStorage from '@react-native-community/async-storage';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const successOption = (props) => {
+  return {
+    title: 'Success',
+    headerStyle: {
+      backgroundColor: '#999CED',
+    },
+    headerTintColor: '#FFFFFF',
+    headerTitleStyle: {color: '#fff'},
+    headerBackTitle: ' ',
+    headerRight: () => (
+      <TouchableOpacity
+        activeOpacity={0.1}
+        onPress={async () => {
+          await AsyncStorage.removeItem('token');
+          props.setIsReady(false);
+        }}
+        style={{padding: 10}}>
+        <Icon
+          name="sign-out"
+          size={20}
+          color="#fff"
+          style={{
+            height: 24,
+            width: 24,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+  };
+};
+
 const tab1 = {
   tabBarLabel: 'JSON',
   tabBarIcon: ({focused}) => (
@@ -64,7 +95,11 @@ const RootStack = (props) => {
     <Stack.Navigator initialRouteName={props.forceLogin ? 'Home' : 'Success'}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="Success" component={SuccessTab} />
+      <Stack.Screen
+        name="Success"
+        component={SuccessTab}
+        options={successOption}
+      />
     </Stack.Navigator>
   );
 };
