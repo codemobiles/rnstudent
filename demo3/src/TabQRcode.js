@@ -1,10 +1,100 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, {Component, useState} from 'react';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  ImageBackground,
+  ScrollView,
+  TextInput,
+} from 'react-native';
+import {ifIphoneX} from 'react-native-iphone-x-helper';
+
+import QRCode from 'react-native-qrcode-svg';
+const PATH_TO_LOGO = './img/cmdev_icon.png';
 
 export default function TabQRcode() {
+  const [qrValue, setQrValue] = useState('');
+
   return (
-    <View>
-      <Text>TabQRcode</Text>
-    </View>
-  )
+    <ImageBackground
+      source={require('./img/gradient_bg.png')}
+      resizeMode={'stretch'}
+      style={styles.container}>
+      <Image
+        resizeMode={'contain'}
+        style={{
+          width: '100%',
+          height: 120,
+          ...ifIphoneX({marginTop: 30}, {marginTop: 0}),
+          padding: 0,
+        }}
+        source={require('./img/header_react_native.png')}
+      />
+    <QRCode
+      value="http://awesome.link.qr"
+    />
+    </ImageBackground>
+  );
 }
+
+class MyQRCode extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const {value} = this.props;
+    return (
+      <View style={{margin: 8}}>
+        <QRCode
+          {...this.props}
+          value={value != '' ? value : 'www.codemobiles.com'}
+        />
+      </View>
+    );
+  }
+}
+
+class CMQRCodeClass extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const {value} = this.props;
+    return (
+      <View style={{margin: 8}}>
+        <QRCode
+          {...this.props}
+          value={value != '' ? value : 'www.codemobiles.com'}
+        />
+      </View>
+    );
+  }
+}
+
+// Functional Component
+const CMQRCode = (props) => {
+  const {value} = props;
+  return (
+    <View style={{margin: 8}}>
+      <QRCode {...props} value={value != '' ? value : 'www.codemobiles.com'} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    alignItems: 'stretch',
+    paddingTop: 15,
+    paddingBottom: 15,
+  },
+  section: {
+    marginTop: 15,
+    marginBottom: 15,
+  },
+});
