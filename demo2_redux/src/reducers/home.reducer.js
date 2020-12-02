@@ -1,7 +1,7 @@
 import {LOGIN_FAILED, LOGIN_FETCHING, LOGIN_SUCCESS} from '../Constants';
 
 const initialState = {
-  onlineUsername: null,
+  onlineUsername: "leklek",
   isFetching: false,
   isFailed: false,
 };

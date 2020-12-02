@@ -11,11 +11,14 @@ import {
 import {Spacer} from './CMWidgets';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
+import {useDispatch, useSelector} from "react-redux"
 
 export default function HomeScreen(props) {
   useEffect(() => {
     setNavigationOption();
   }, []);
+
+  const homeReducer = useSelector(state => state.homeReducer)
 
   setNavigationOption = () => {
     props.navigation.setOptions({
@@ -74,7 +77,7 @@ export default function HomeScreen(props) {
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
-      <Text>{JSON.stringify(account)}</Text>
+      <Text>{homeReducer.onlineUsername}</Text>
 
       {/* Authen section */}
       <View
