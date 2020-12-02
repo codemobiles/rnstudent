@@ -45,7 +45,7 @@ const TabScanner = props => {
 };
 
 const onResult = result => {
-  alert(result);
+  alert("Result is : " + result);
 };
 
 const onClickScan = ({navigation}) => {
