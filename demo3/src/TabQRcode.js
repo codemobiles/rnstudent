@@ -55,7 +55,7 @@ export default function TabQRcode() {
         }}>
         {[1, 2, 3].map((value) => (
           <MyQRCode
-            value={value.toString()}
+            value={qrValue != '' ? qrValue : "www.codemobiles.com"}
             logo={require(PATH_TO_LOGO)}
             logoBorderRadius={15}
           />
@@ -65,24 +65,24 @@ export default function TabQRcode() {
   );
 }
 
+
 class MyQRCode extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
   }
 
   render() {
-    const {value} = this.props;
+    const {value} = this.props
     return (
-      <View style={{margin: 8}}>
-        <QRCode
-          {...this.props}
-          value={value != '' ? value : 'www.codemobiles.com'}
-        />
+      <View style={{marginTop: 8}}>
+        <QRCode value={value != '' ? value : "www.codemobiles"}  {...this.props}/>
       </View>
     );
   }
 }
+
 
 class CMQRCodeClass extends Component {
   constructor(props) {
