@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     checkLoginState();
-  }, []);
+  }, [isReady]);
 
   checkLoginState = async () => {
     const token = await AsyncStorage.getItem('TOKEN');

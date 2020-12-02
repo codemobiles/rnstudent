@@ -98,7 +98,7 @@ const RootStack = (props) => {
       <Stack.Screen
         name="Success"
         component={SuccessTab}
-        options={successOption}
+        options={successOption(props)}
       />
     </Stack.Navigator>
   );
