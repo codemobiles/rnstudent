@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import {Spacer} from './CMWidgets';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AsyncStorage from '@react-native-community/async-storage';
 import {useDispatch, useSelector} from 'react-redux';
 import * as homeActions from './actions/home.action';
 
@@ -67,7 +66,17 @@ export default function HomeScreen(props) {
       />
 
       {homeReducer.isFailed && (
-        <Text style={{color: 'red', fontSize: 24, fontWeight: '800'}}>
+        <Text
+          style={{
+            color: 'yellow',
+            fontSize: 20,
+            fontWeight: '500',
+            textAlign: 'center',
+            backgroundColor: 'black',
+            paddingTop: 8,
+            paddingBottom: 8,
+            marginBottom: 10,
+          }}>
           Login failed
         </Text>
       )}

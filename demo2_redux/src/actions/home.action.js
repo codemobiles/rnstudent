@@ -1,4 +1,5 @@
 import {LOGIN_FAILED, LOGIN_FETCHING, LOGIN_SUCCESS} from '../Constants';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // Code to be called by reducers
 export const setLoginToFetching = () => ({
