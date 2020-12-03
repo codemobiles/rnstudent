@@ -15,12 +15,26 @@ export const setLoginToSuccess = (payload) => ({
 });
 
 // Code to be called by UI component
-export const login = (account) => {
+export const login = (account, navigation) => {
   return (dispatch) => {
     dispatch(setLoginToFetching());
 
-    setTimeout(() => {
-      dispatch(setLoginToSuccess('admin'));
+    setTimeout(async () => {
+      const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
+      if (regAccJSON) {
+        const regAcc = JSON.parse(regAccJSON);
+
+        if (
+          regAcc.username == account.username &&
+          regAcc.password == account.password
+        ) {
+          await AsyncStorage.setItem('TOKEN', account.username);
+          dispatch(setLoginToSuccess(account.username));
+          navigation.navigate('Success');
+        } else {
+          dispatch(setLoginToFailed());
+        }
+      }
     }, 1000);
   };
 };
