@@ -11,14 +11,16 @@ import {
 import {Spacer} from './CMWidgets';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch, useSelector} from 'react-redux';
+import * as homeActions from './actions/home.action';
 
 export default function HomeScreen(props) {
   useEffect(() => {
     setNavigationOption();
   }, []);
 
-  const homeReducer = useSelector(state => state.homeReducer)
+  const homeReducer = useSelector((state) => state.homeReducer);
+  const dispatch = useDispatch();
 
   setNavigationOption = () => {
     props.navigation.setOptions({
@@ -52,6 +54,9 @@ export default function HomeScreen(props) {
 
   onLogin = async () => {
     //props.navigation.navigate('Success');
+
+    dispatch(homeActions.login(account));
+
     const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
     if (regAccJSON) {
       const regAcc = JSON.parse(regAccJSON);
@@ -60,7 +65,7 @@ export default function HomeScreen(props) {
         regAcc.username == account.username &&
         regAcc.password == account.password
       ) {
-        await AsyncStorage.setItem("TOKEN", account.username)
+        await AsyncStorage.setItem('TOKEN', account.username);
         props.navigation.navigate('Success');
       } else {
         alert('Login failed');
