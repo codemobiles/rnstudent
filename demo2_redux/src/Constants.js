@@ -1,3 +1,8 @@
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FETCHING = 'LOGIN_FETCHING';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
+
+
+export const JSON_SUCCESS = 'JSON_SUCCESS';
+export const JSON_FETCHING = 'JSON_FETCHING';
+export const JSON_FAILED = 'JSON_FAILED';
