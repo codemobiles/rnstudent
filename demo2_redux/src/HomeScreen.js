@@ -57,20 +57,20 @@ export default function HomeScreen(props) {
 
     dispatch(homeActions.login(account));
 
-    const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
-    if (regAccJSON) {
-      const regAcc = JSON.parse(regAccJSON);
+    // const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
+    // if (regAccJSON) {
+    //   const regAcc = JSON.parse(regAccJSON);
 
-      if (
-        regAcc.username == account.username &&
-        regAcc.password == account.password
-      ) {
-        await AsyncStorage.setItem('TOKEN', account.username);
-        props.navigation.navigate('Success');
-      } else {
-        alert('Login failed');
-      }
-    }
+    //   if (
+    //     regAcc.username == account.username &&
+    //     regAcc.password == account.password
+    //   ) {
+    //     await AsyncStorage.setItem('TOKEN', account.username);
+    //     props.navigation.navigate('Success');
+    //   } else {
+    //     alert('Login failed');
+    //   }
+    // }
   };
 
   // JSX
