@@ -9,36 +9,19 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import axios from 'axios';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import * as jsonActions from './actions/json.action';
 
 export default function JSONFeedScreen() {
-  const [dataArray, setDataArray] = React.useState([]);
-  const [isRefreshing, setIsRefreshing] = React.useState(false);
   const homeReducer = useSelector((state) => state.homeReducer);
+  const jsonReducer = useSelector((state) => state.jsonReducer);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
-    loadData();
+    // loadData();
+    dispatch(jsonActions.loadData());
   }, []);
-
-  const loadData = async () => {
-    try {
-      setIsRefreshing(true);
-      setDataArray([]);
-
-      const regUsername = 'admin';
-      const regPassword = 'password';
-      const data = `username=${regUsername}&password=${regPassword}&type=foods`;
-      const url = 'https://codemobiles.com/adhoc/youtubes/index_new.php';
-      const result = await axios.post(url, data);
-
-      setIsRefreshing(false);
-      setDataArray(result.data.youtubes);
-    } catch (e) {
-      alert('Fetching failed');
-    }
-  };
 
   const renderRow = ({item, index}) => {
     return (
@@ -104,9 +87,9 @@ export default function JSONFeedScreen() {
       source={require('./assets/img/bg.png')}>
       <Text>{homeReducer.onlineUsername}</Text>
       <FlatList
-        onRefresh={loadData}
-        refreshing={isRefreshing}
-        data={dataArray}
+        // onRefresh={dispatch(jsonActions.loadData())}
+        refreshing={jsonReducer.isRefreshing}
+        data={jsonReducer.dataArray}
         renderItem={renderRow}
         keyExtractor={(item) => item.id}
       />
