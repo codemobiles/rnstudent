@@ -87,7 +87,9 @@ export default function JSONFeedScreen() {
       source={require('./assets/img/bg.png')}>
       <Text>{homeReducer.onlineUsername}</Text>
       <FlatList
-        // onRefresh={dispatch(jsonActions.loadData())}
+        onRefresh={
+          jsonReducer.dataArray.lenght > 0 && dispatch(jsonActions.loadData())
+        }
         refreshing={jsonReducer.isRefreshing}
         data={jsonReducer.dataArray}
         renderItem={renderRow}
