@@ -11,10 +11,12 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import {YouTubeStandaloneAndroid} from 'react-native-youtube';
+import {useSelector} from 'react-redux';
 
 export default function JSONFeedScreen() {
   const [dataArray, setDataArray] = React.useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
+  const homeReducer = useSelector((state) => state.homeReducer);
 
   React.useEffect(() => {
     loadData();
@@ -100,6 +102,7 @@ export default function JSONFeedScreen() {
     <ImageBackground
       style={styles.container}
       source={require('./assets/img/bg.png')}>
+      <Text>{homeReducer.onlineUsername}</Text>
       <FlatList
         onRefresh={loadData}
         refreshing={isRefreshing}

@@ -35,6 +35,8 @@ export const login = (account, navigation) => {
         } else {
           dispatch(setLoginToFailed());
         }
+      }else{
+        dispatch(setLoginToFailed());
       }
     }, 1000);
   };
