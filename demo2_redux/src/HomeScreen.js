@@ -53,24 +53,7 @@ export default function HomeScreen(props) {
   const [account, setAccount] = useState({username: '', password: ''});
 
   onLogin = async () => {
-    //props.navigation.navigate('Success');
-
-    dispatch(homeActions.login(account));
-
-    // const regAccJSON = await AsyncStorage.getItem('ACCOUNT');
-    // if (regAccJSON) {
-    //   const regAcc = JSON.parse(regAccJSON);
-
-    //   if (
-    //     regAcc.username == account.username &&
-    //     regAcc.password == account.password
-    //   ) {
-    //     await AsyncStorage.setItem('TOKEN', account.username);
-    //     props.navigation.navigate('Success');
-    //   } else {
-    //     alert('Login failed');
-    //   }
-    // }
+    dispatch(homeActions.login(account, props.navigation));
   };
 
   // JSX
@@ -82,7 +65,12 @@ export default function HomeScreen(props) {
         resizeMode="contain"
         source={require('./assets/img/header_react_native.png')}
       />
-      <Text>{homeReducer.onlineUsername}</Text>
+
+      {homeReducer.isFailed && (
+        <Text style={{color: 'red', fontSize: 24, fontWeight: '800'}}>
+          Login failed
+        </Text>
+      )}
 
       {/* Authen section */}
       <View
