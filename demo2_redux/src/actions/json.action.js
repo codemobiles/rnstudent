@@ -12,3 +12,11 @@ export const setJSONtoSuccess = (payload) => ({
 export const setJSONtoFailed = () => ({
   type: JSON_FAILED,
 });
+
+
+
+export const loadData = ()=>{
+    return dispatch=>{
+        
+    }
+}

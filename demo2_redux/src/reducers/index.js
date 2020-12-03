@@ -1,7 +1,9 @@
-const { combineReducers } = require("redux");
+const {combineReducers} = require('redux');
 
-import homeReducer from "./home.reducer"
+import homeReducer from './home.reducer';
+import jsonReducer from './json.reducer';
 
 export default combineReducers({
-    homeReducer
-})
+  homeReducer,
+  jsonReducer,
+});
