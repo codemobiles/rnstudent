@@ -17,7 +17,6 @@ export const add = (value)=>{
     }
 }
 
-
 export const del = (value)=>{
     return dispatch=>{
         setApptoDel(value)
