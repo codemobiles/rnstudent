@@ -13,12 +13,12 @@ export const setApptoDel = (payload) => ({
 
 export const add = (value)=>{
     return dispatch=>{
-        setApptoAdd(value)
+        dispatch(setApptoAdd(value))
     }
 }
 
 export const del = (value)=>{
     return dispatch=>{
-        setApptoDel(value)
+        dispatch(setApptoDel(value))
     }
 }
