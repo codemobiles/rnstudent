@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default function DetailScreen() {
+export default function DetailScreen(props) {
     return (
         <View>
-            <Text></Text>
+            <Text>{props.route.params.title}</Text>
         </View>
     )
 }
