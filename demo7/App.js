@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import axios from 'axios';
 
 export default function App() {
@@ -18,25 +18,45 @@ export default function App() {
   return (
     <View style={{flex: 1}}>
       <View style={{flexDirection: 'row'}}>
-        <Box color="red"/>
+        <Box color="red" />
         <Spacer />
-        <Box color="yellow"/>
+        <Box color="yellow" />
       </View>
 
-      <View style={{flex: 1}}>
-        {dataArray.map((item) => (
-          <Text key={item.id}>{item.title}</Text>
-        ))}
-      </View>
+      <ContentV2 dataArray={dataArray} />
 
       <View style={{flexDirection: 'row'}}>
-        <Box  color="blue"/>
+        <Box color="blue" />
         <Spacer />
-        <Box  color="green"/>
+        <Box color="green" />
       </View>
     </View>
   );
 }
+
+const ContentV1 = ({dataArray}) => {
+  return (
+    <View style={{flex: 1}}>
+      <Text style={{fontSize: 40}}>V1</Text>
+      {dataArray.map((item) => (
+        <Text key={item.id}>{item.title}</Text>
+      ))}
+    </View>
+  );
+};
+
+const ContentV2 = ({dataArray}) => {
+  return (
+    <View style={{flex: 1}}>
+      <Text style={{fontSize: 40}}>V2</Text>
+      <FlatList
+        data={dataArray}
+        renderItem={({item, index}) => <Text>{item.title}</Text>}
+        keyExtractor={item=>item.id}
+      />
+    </View>
+  );
+};
 
 const Spacer = () => {
   return <View style={{flex: 1}} />;
