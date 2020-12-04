@@ -24,3 +24,9 @@ In order to reference reducers in components
 In order to call action to upodate reducer in components
 -----------------------   
 - useDispatch
+
+
+! important 
+Don't forget to import react in index.js
+import React from 'react';
+
