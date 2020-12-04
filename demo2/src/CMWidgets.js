@@ -30,6 +30,7 @@ const CMEntry = (props) => {
       <Spacer size={8} />
 
       <TextInput
+        autoCapitalize="none"
         onChangeText={props.onChanged}
         keyboardType={props.type}
         secureTextEntry={props.isSecured}

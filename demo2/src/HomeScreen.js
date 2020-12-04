@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Platform,
   Button,
 } from 'react-native';
 import {Spacer} from './CMWidgets';
@@ -57,7 +58,7 @@ export default function HomeScreen(props) {
         regAcc.username == account.username &&
         regAcc.password == account.password
       ) {
-        await AsyncStorage.setItem("TOKEN", account.username)
+        await AsyncStorage.setItem('TOKEN', account.username);
         props.navigation.navigate('Success');
       } else {
         alert('Login failed');
@@ -107,6 +108,7 @@ export default function HomeScreen(props) {
           <Spacer size={8} />
 
           <TextInput
+            autoCapitalize="none"
             onChangeText={(text) => setAccount({...account, username: text})}
             keyboardType="email-address"
             placeholder="Username"
@@ -114,6 +116,7 @@ export default function HomeScreen(props) {
               borderColor: '#0003',
               borderWidth: 1,
               flex: 1,
+              height: Platform.OS == 'ios' ? 40 : 30,
               borderRadius: 10,
               paddingLeft: 8,
             }}
@@ -148,6 +151,7 @@ export default function HomeScreen(props) {
               borderColor: '#0003',
               borderWidth: 1,
               flex: 1,
+              height: Platform.OS == 'ios' ? 40 : 30,
               borderRadius: 10,
               paddingLeft: 8,
             }}
