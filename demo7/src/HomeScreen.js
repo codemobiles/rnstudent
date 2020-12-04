@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import axios from 'axios';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   const [dataArray, setDataArray] = useState([]);
   useEffect(() => {
     loadData();
@@ -23,7 +23,7 @@ export default function HomeScreen() {
         <Box color="yellow" />
       </View>
 
-      <ContentV2 dataArray={dataArray} />
+      <ContentV2 dataArray={dataArray} navigation={props.navigation}/>
 
       <View style={{flexDirection: 'row'}}>
         <Box color="blue" />
@@ -45,13 +45,13 @@ const ContentV1 = ({dataArray}) => {
   );
 };
 
-const ContentV2 = ({dataArray}) => {
+const ContentV2 = ({dataArray, navigation}) => {
   return (
     <View style={{flex: 1}}>
       <Text style={{fontSize: 40}}>V2</Text>
       <FlatList
         data={dataArray}
-        renderItem={({item, index}) => <Text>{item.title}</Text>}
+        renderItem={({item, index}) => <Text onPress={()=>navigation.navigate("Detail")}>{item.title}</Text>}
         keyExtractor={item=>item.id}
       />
     </View>
