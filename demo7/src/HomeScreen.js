@@ -23,7 +23,7 @@ export default function HomeScreen(props) {
         <Box color="yellow" />
       </View>
 
-      <ContentV2 dataArray={dataArray} navigation={props.navigation}/>
+      <ContentV2 dataArray={dataArray} navigation={props.navigation} />
 
       <View style={{flexDirection: 'row'}}>
         <Box color="blue" />
@@ -51,8 +51,13 @@ const ContentV2 = ({dataArray, navigation}) => {
       <Text style={{fontSize: 40}}>V2</Text>
       <FlatList
         data={dataArray}
-        renderItem={({item, index}) => <Text onPress={()=>navigation.navigate("Detail", {title:item.title})}>{item.title}</Text>}
-        keyExtractor={item=>item.id}
+        renderItem={({item, index}) => (
+          <Text
+            onPress={() => navigation.navigate('Detail', {title: item.title})}>
+            {item.title}
+          </Text>
+        )}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
