@@ -16,7 +16,7 @@ import logger from 'redux-logger';
 const store = createStore(reducers, applyMiddleware(thunk, logger));
 
 const ReduxApp = () => (
-  <Provider store={store}>
+  <Provider store={store}> 
     <App />
   </Provider>
 );
